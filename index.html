@@ -3,42 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Partus: Pregnancy Wheel — Support &amp; Privacy</title>
+<title>Partus — Pregnancy Wheel &amp; OB Wheel App with ACOG Redating, IVF Dating and Bishop Score</title>
+<meta name="description" content="Pregnancy wheel (OB wheel) app for clinicians: gestational age and due date calculator with ACOG ultrasound redating, IVF transfer dating and Bishop score. $4.99 once, no account, works offline. iPhone and iPad.">
+<link rel="canonical" href="https://partuswheel.app/">
+<link rel="icon" type="image/png" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<meta name="apple-itunes-app" content="app-id=6796027980">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Partus">
+<meta property="og:title" content="Partus: Pregnancy Wheel — the OB wheel that finally grew up">
+<meta property="og:description" content="ACOG ultrasound redating, IVF transfer dating and the Bishop score on one clean screen. $4.99 once, no account, works offline.">
+<meta property="og:url" content="https://partuswheel.app/">
+<meta property="og:image" content="https://partuswheel.app/icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Partus: Pregnancy Wheel — the OB wheel that finally grew up">
+<meta name="twitter:description" content="ACOG ultrasound redating, IVF transfer dating and the Bishop score on one clean screen. $4.99 once, no account, works offline.">
+<meta name="twitter:image" content="https://partuswheel.app/icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Partus: Pregnancy Wheel",
+  "operatingSystem": "iOS",
+  "applicationCategory": "MedicalApplication",
+  "description": "Pregnancy dating calculator for healthcare professionals: OB wheel with ACOG ultrasound redating, IVF transfer dating, reverse week calculator and Bishop score.",
+  "offers": { "@type": "Offer", "price": "4.99", "priceCurrency": "USD" },
+  "url": "https://partuswheel.app/",
+  "installUrl": "https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980",
+  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+}
+</script>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         max-width: 640px; margin: 0 auto; padding: 40px 20px; color: #1c2733; line-height: 1.6; }
-  h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 2em; }
-  .arc { color: #0A84A0; font-weight: 600; }
-  a { color: #0A84A0; }
-  footer { margin-top: 3em; font-size: 0.85em; color: #6b7280; }
+  :root { --navy:#0d1420; --card:#1a2332; --teal:#0A84A0;
+          --lmp:#2E9E6B; --con:#D9A50F; --ga:#E07A2E; --usg:#D4548E; --edd:#7A5FD0; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         margin:0; color:#1c2733; line-height:1.6; }
+  .hero { background:var(--navy); color:#fff; padding:64px 20px 56px; text-align:center; }
+  .hero .arc { display:inline-flex; gap:6px; margin-bottom:18px; }
+  .hero .arc span { width:34px; height:10px; border-radius:5px; }
+  .hero h1 { font-size:2em; margin:0 0 10px; }
+  .hero .tag { color:#aeb8c8; max-width:560px; margin:0 auto 26px; font-size:1.06em; }
+  .store-btn { display:inline-block; background:#fff; color:var(--navy); font-weight:600;
+               padding:13px 26px; border-radius:12px; text-decoration:none; font-size:1.05em; }
+  .store-btn:hover { background:#e8edf4; }
+  .hero .price { color:#8a93a5; font-size:.9em; margin-top:12px; }
+  main { max-width:640px; margin:0 auto; padding:40px 20px 20px; }
+  h2 { font-size:1.2em; margin-top:2.2em; }
+  .feat { display:flex; gap:12px; margin:14px 0; align-items:flex-start; }
+  .feat .dot { flex:0 0 12px; width:12px; height:12px; border-radius:6px; margin-top:6px; }
+  .feat b { display:block; }
+  .feat p { margin:2px 0 0; color:#4b5563; font-size:.95em; }
+  a { color:var(--teal); }
+  footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
 </style>
 </head>
 <body>
-<h1><span class="arc">Partus</span>: Pregnancy Wheel</h1>
-<p>A pregnancy dating calculator for healthcare professionals: OB wheel,
-ACOG-based ultrasound redating, IVF transfer dating, reverse week calculator
-and Bishop score. One price, everything included. No account. Works offline.</p>
 
-<h2 id="support">Support</h2>
-<p>Questions, bug reports or feature requests are welcome at
-<a href="mailto:ep@tommano.com">ep@tommano.com</a>.
-We usually reply within a few days.</p>
+<div class="hero">
+  <div class="arc" aria-hidden="true">
+    <span style="background:var(--lmp)"></span><span style="background:var(--con)"></span>
+    <span style="background:var(--ga)"></span><span style="background:var(--usg)"></span>
+    <span style="background:var(--edd)"></span>
+  </div>
+  <h1>Partus: Pregnancy Wheel</h1>
+  <p class="tag">The OB wheel that finally grew up — ACOG ultrasound redating,
+  IVF transfer dating and the Bishop score, on one clean screen built for
+  healthcare professionals.</p>
+  <a class="store-btn" href="https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980">
+    &#63743; Download on the App Store
+  </a>
+  <p class="price">$4.99 once &middot; everything included &middot; no account &middot; works offline</p>
+</div>
 
-<h2 id="privacy">Privacy Policy</h2>
-<p><strong>Partus collects no data.</strong> The app has no account, no sign-in,
-no analytics, no advertising and no third-party code. It never connects to the
-internet: every calculation happens on your device, and the only stored value
-(the last entered date) stays in your device's local storage. Nothing is ever
-transmitted to us or to anyone else.</p>
-<p>Because no data is collected, there is nothing for us to share, sell,
-or delete. If you have any questions about this policy, contact
-<a href="mailto:ep@tommano.com">ep@tommano.com</a>.</p>
-<p>Effective date: July 29, 2026.</p>
+<main>
+  <h2>A pregnancy wheel built for clinicians — not another baby tracker</h2>
 
-<h2 id="disclaimer">Disclaimer</h2>
-<p>Partus is a reference calculator for healthcare professionals.
-It does not provide medical advice or diagnosis.</p>
+  <div class="feat"><span class="dot" style="background:var(--usg)"></span>
+    <div><b>Ultrasound redating, per ACOG</b>
+    <p>Enter the exam date and measured GA — Partus applies the ACOG Committee
+    Opinion 700 thresholds and tells you plainly which dating applies. No other
+    wheel does this.</p></div></div>
 
-<footer>© 2026 55DIGITS LLC</footer>
+  <div class="feat"><span class="dot" style="background:var(--teal)"></span>
+    <div><b>IVF transfer dating</b>
+    <p>Day-3 or day-5 transfer &rarr; EDD in two taps, no LMP needed. The wheel
+    keeps a visible note that dates came from IVF.</p></div></div>
+
+  <div class="feat"><span class="dot" style="background:var(--edd)"></span>
+    <div><b>Bishop score, live</b>
+    <p>Five parameters, instant score and interpretation — requested by
+    clinicians for years, delivered here.</p></div></div>
+
+  <div class="feat"><span class="dot" style="background:var(--ga)"></span>
+    <div><b>Gestational age &amp; due date calculator, both directions</b>
+    <p>Edit LMP, EDD, conception or today's GA — everything else recalculates
+    instantly. Plus a reverse calculator: "the patient was 12 w 0 d on&hellip;".</p></div></div>
+
+  <div class="feat"><span class="dot" style="background:var(--lmp)"></span>
+    <div><b>No membership. No subscription. No data.</b>
+    <p>$4.99 once. No account, no sign-in, fully offline, App Store privacy
+    label: Data Not Collected. Sources cited in-app (ACOG CO 700; Bishop 1964;
+    Hadlock 1991).</p></div></div>
+
+  <h2 id="support">Support</h2>
+  <p>Questions, bug reports or feature requests are welcome at
+  <a href="mailto:ep@tommano.com">ep@tommano.com</a>.
+  We usually reply within a few days.</p>
+
+  <h2 id="privacy">Privacy Policy</h2>
+  <p><strong>Partus collects no data.</strong> The app has no account, no sign-in,
+  no analytics, no advertising and no third-party code. It never connects to the
+  internet: every calculation happens on your device, and the only stored value
+  (the last entered date) stays in your device's local storage. Nothing is ever
+  transmitted to us or to anyone else.</p>
+  <p>Because no data is collected, there is nothing for us to share, sell,
+  or delete. If you have any questions about this policy, contact
+  <a href="mailto:ep@tommano.com">ep@tommano.com</a>.</p>
+  <p>Effective date: July 29, 2026.</p>
+
+  <h2 id="disclaimer">Disclaimer</h2>
+  <p>Partus is a reference calculator for healthcare professionals.
+  It does not provide medical advice or diagnosis.</p>
+</main>
+
+<footer>&copy; 2026 55DIGITS LLC &middot; <a href="https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980">Partus on the App Store</a></footer>
+
 </body>
 </html>
