@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACOG Ultrasound Redating Calculator — When to Change a Due Date (CO 700)</title>
+<meta name="description" content="Free ACOG redating calculator: compare LMP dating with ultrasound gestational age and see instantly whether the pregnancy should be redated per ACOG Committee Opinion 700 thresholds.">
+<link rel="canonical" href="https://partuswheel.app/redating-calculator.html">
+<link rel="icon" type="image/png" href="/icon.png">
+<meta name="apple-itunes-app" content="app-id=6796027980">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Partus">
+<meta property="og:title" content="ACOG Ultrasound Redating Calculator">
+<meta property="og:description" content="LMP says one thing, the ultrasound another — should you redate? Instant answer using ACOG CO 700 thresholds.">
+<meta property="og:url" content="https://partuswheel.app/redating-calculator.html">
+<meta property="og:image" content="https://partuswheel.app/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ACOG Ultrasound Redating Calculator",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "Any (web)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://partuswheel.app/redating-calculator.html",
+  "description": "Compares LMP-based and ultrasound-based gestational age and applies ACOG Committee Opinion 700 redating thresholds.",
+  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+}
+</script>
+<style>
+  :root { --navy:#0d1420; --card:#1a2332; --teal:#0A84A0;
+          --lmp:#2E9E6B; --usg:#D4548E; --edd:#7A5FD0; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         margin:0; color:#1c2733; line-height:1.6; background:#fff; }
+  .hero { background:var(--navy); color:#fff; padding:44px 20px 36px; text-align:center; }
+  .hero h1 { font-size:1.6em; margin:0 0 8px; }
+  .hero p { color:#aeb8c8; max-width:560px; margin:0 auto; font-size:1em; }
+  .hero a { color:#8fd3e8; }
+  main { max-width:640px; margin:0 auto; padding:28px 20px 20px; }
+  .calc { background:#f4f6f9; border:1px solid #e2e7ee; border-radius:14px; padding:20px; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+  .row label { flex:1 1 220px; font-weight:600; font-size:.95em; }
+  .row .inputs { display:flex; gap:8px; }
+  select { font-size:1em; padding:8px 10px; border-radius:8px; border:1px solid #c7cfda; background:#fff; }
+  .legend { font-size:.8em; color:#6b7280; margin-top:2px; font-weight:400; display:block; }
+  .verdict { margin-top:16px; border-radius:12px; padding:16px 18px; display:none; }
+  .verdict.redate { background:#fdeef5; border:1px solid var(--usg); display:block; }
+  .verdict.keep { background:#eaf7f0; border:1px solid var(--lmp); display:block; }
+  .verdict h3 { margin:0 0 4px; font-size:1.15em; }
+  .verdict p { margin:4px 0; font-size:.95em; }
+  table { border-collapse:collapse; width:100%; margin:18px 0; font-size:.92em; }
+  th, td { border:1px solid #e2e7ee; padding:7px 10px; text-align:left; }
+  th { background:#f4f6f9; }
+  tr.active td { background:#fdeef5; font-weight:600; }
+  h2 { font-size:1.15em; margin-top:2em; }
+  .cta { background:var(--navy); color:#fff; border-radius:14px; padding:20px; margin:26px 0; text-align:center; }
+  .cta p { color:#aeb8c8; margin:6px 0 14px; font-size:.95em; }
+  .store-btn { display:inline-block; background:#fff; color:var(--navy); font-weight:600;
+               padding:11px 22px; border-radius:11px; text-decoration:none; }
+  .faq h3 { font-size:1em; margin:1.2em 0 .2em; }
+  .faq p { margin:.2em 0; color:#4b5563; font-size:.95em; }
+  .fine { font-size:.85em; color:#6b7280; }
+  a { color:var(--teal); }
+  footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>ACOG Ultrasound Redating Calculator</h1>
+  <p>The chart says one gestational age, the ultrasound says another. Should the pregnancy be
+  redated? Instant answer using the thresholds from
+  <a href="https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date" rel="noopener">ACOG Committee Opinion No.&nbsp;700</a>.</p>
+</div>
+
+<main>
+  <div class="calc">
+    <div class="row">
+      <label>Gestational age by LMP<span class="legend">on the day of the ultrasound</span></label>
+      <span class="inputs">
+        <select id="lw" aria-label="LMP weeks"></select>
+        <select id="ld" aria-label="LMP days"></select>
+      </span>
+    </div>
+    <div class="row">
+      <label>Gestational age by ultrasound<span class="legend">as measured at the exam</span></label>
+      <span class="inputs">
+        <select id="uw" aria-label="Ultrasound weeks"></select>
+        <select id="ud" aria-label="Ultrasound days"></select>
+      </span>
+    </div>
+    <div id="out" class="verdict" role="status"></div>
+  </div>
+
+  <h2>The ACOG CO 700 thresholds</h2>
+  <p class="fine">The window is chosen by the <strong>ultrasound</strong> gestational age. Redate only when the
+  difference <strong>exceeds</strong> the threshold — exactly at the threshold, LMP dating stands.</p>
+  <table id="thr">
+    <tr><th>Ultrasound GA</th><th>Redate if difference is more than</th></tr>
+    <tr data-min="0"   data-max="62"><td>up to 8w6d</td><td>5 days</td></tr>
+    <tr data-min="63"  data-max="111"><td>9w0d – 15w6d</td><td>7 days</td></tr>
+    <tr data-min="112" data-max="153"><td>16w0d – 21w6d</td><td>10 days</td></tr>
+    <tr data-min="154" data-max="195"><td>22w0d – 27w6d</td><td>14 days</td></tr>
+    <tr data-min="196" data-max="999"><td>28w0d and beyond</td><td>21 days</td></tr>
+  </table>
+
+  <div class="cta">
+    <b>Partus: Pregnancy Wheel — this rule, applied automatically.</b>
+    <p>OB wheel for clinicians with ACOG redating, IVF transfer dating and the Bishop score.
+    No account, no patient data stored, works offline.</p>
+    <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-redating&amp;mt=8">Get Partus on the App&nbsp;Store</a>
+  </div>
+
+  <div class="faq">
+    <h2>Common questions</h2>
+    <h3>Why did the due date change after an ultrasound?</h3>
+    <p>Early ultrasound measures the embryo directly and is accurate to within days, while LMP dating
+    relies on recall and an assumed 28-day cycle. When the two disagree by more than the ACOG threshold
+    for that gestational age, the ultrasound date is adopted.</p>
+    <h3>Does redating work in both directions?</h3>
+    <p>Yes. The rule applies whether the ultrasound is behind or ahead of the LMP dates — only the size
+    of the difference matters.</p>
+    <h3>Why do the thresholds grow with gestational age?</h3>
+    <p>First-trimester crown-rump length dates a pregnancy to within about 5–7 days; later in pregnancy
+    fetal size varies more between individuals, so a larger discrepancy is needed before the calendar is
+    overruled.</p>
+    <h3>What if the LMP is unknown or unreliable?</h3>
+    <p>Ultrasound dating is used from the start — there is nothing to redate against.</p>
+  </div>
+
+  <h2>Source</h2>
+  <p class="fine">Methods for Estimating the Due Date. <em>ACOG Committee Opinion No. 700</em>, May 2017.
+  This page is a reference tool for healthcare professionals. It does not provide medical advice or diagnosis.</p>
+</main>
+
+<footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;
+<a href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-redating&amp;mt=8">Partus on the App Store</a></footer>
+
+<script>
+(function () {
+  var lw = document.getElementById('lw'), ld = document.getElementById('ld'),
+      uw = document.getElementById('uw'), ud = document.getElementById('ud'),
+      out = document.getElementById('out');
+  function fill(sel, n, unit, def) {
+    for (var i = 0; i <= n; i++) {
+      var o = document.createElement('option');
+      o.value = i; o.textContent = i + unit;
+      if (i === def) o.selected = true;
+      sel.appendChild(o);
+    }
+  }
+  fill(lw, 44, 'w', 8); fill(ld, 6, 'd', 3);
+  fill(uw, 44, 'w', 7); fill(ud, 6, 'd', 4);
+
+  function threshold(us) {           // mirrors ACOG CO 700 / RedatingRules.swift
+    if (us < 63) return 5;
+    if (us < 112) return 7;
+    if (us < 154) return 10;
+    if (us < 196) return 14;
+    return 21;
+  }
+  function ga(d) { return Math.floor(d / 7) + 'w' + (d % 7) + 'd'; }
+
+  function calc() {
+    var lmp = (+lw.value) * 7 + (+ld.value);
+    var us  = (+uw.value) * 7 + (+ud.value);
+    var thr = threshold(us);
+    var diff = Math.abs(lmp - us);
+    var redate = diff > thr;
+    var rows = document.querySelectorAll('#thr tr[data-min]');
+    rows.forEach(function (r) {
+      var on = us >= +r.dataset.min && us <= +r.dataset.max;
+      r.classList.toggle('active', on);
+    });
+    out.className = 'verdict ' + (redate ? 'redate' : 'keep');
+    out.innerHTML = '<h3>' + (redate ? 'Redate — adopt ultrasound dating.' : 'Keep LMP dating.') + '</h3>' +
+      '<p>Difference: <b>' + diff + ' day' + (diff === 1 ? '' : 's') + '</b> (' + ga(lmp) + ' by LMP vs ' +
+      ga(us) + ' by ultrasound).</p>' +
+      '<p>Threshold at ultrasound GA ' + ga(us) + ': <b>more than ' + thr + ' days</b>. ' +
+      (redate ? diff + ' &gt; ' + thr + ', so the pregnancy is redated per ACOG CO 700.'
+              : diff + ' &le; ' + thr + ', so the dates agree and LMP dating stands.') + '</p>';
+  }
+  [lw, ld, uw, ud].forEach(function (s) { s.addEventListener('change', calc); });
+  calc();
+})();
+</script>
+
+</body>
+</html>
