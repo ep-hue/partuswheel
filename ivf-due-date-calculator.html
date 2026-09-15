@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IVF Due Date Calculator — Day-3, Day-5 and Day-6 Embryo Transfer</title>
+<meta name="description" content="Free IVF due date calculator: enter the embryo transfer date and whether it was a day-3, day-5 or day-6 transfer — get the due date, equivalent LMP and gestational age today. No LMP needed.">
+<link rel="canonical" href="https://partuswheel.app/ivf-due-date-calculator.html">
+<link rel="icon" type="image/png" href="/icon.png">
+<meta name="apple-itunes-app" content="app-id=6796027980">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Partus">
+<meta property="og:title" content="IVF Due Date Calculator — Day-3, Day-5 and Day-6 Transfer">
+<meta property="og:description" content="Transfer date in — due date out. Day-3, day-5 and day-6 embryo transfers, fresh or frozen. No LMP needed.">
+<meta property="og:url" content="https://partuswheel.app/ivf-due-date-calculator.html">
+<meta property="og:image" content="https://partuswheel.app/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "IVF Due Date Calculator",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "Any (web)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://partuswheel.app/ivf-due-date-calculator.html",
+  "description": "Computes the estimated due date, equivalent LMP and gestational age from an IVF embryo transfer date (day-3, day-5 or day-6 transfer).",
+  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+}
+</script>
+<style>
+  :root { --navy:#0d1420; --card:#1a2332; --teal:#0A84A0;
+          --lmp:#2E9E6B; --usg:#D4548E; --edd:#7A5FD0; --ga:#D97A2B; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         margin:0; color:#1c2733; line-height:1.6; background:#fff; }
+  .hero { background:var(--navy); color:#fff; padding:44px 20px 36px; text-align:center; }
+  .hero h1 { font-size:1.6em; margin:0 0 8px; }
+  .hero p { color:#aeb8c8; max-width:560px; margin:0 auto; font-size:1em; }
+  main { max-width:640px; margin:0 auto; padding:28px 20px 20px; }
+  .calc { background:#f4f6f9; border:1px solid #e2e7ee; border-radius:14px; padding:20px; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+  .row label { flex:1 1 200px; font-weight:600; font-size:.95em; }
+  .row .inputs { display:flex; gap:8px; }
+  select, input[type=date] { font-size:1em; padding:8px 10px; border-radius:8px;
+         border:1px solid #c7cfda; background:#fff; font-family:inherit; }
+  .legend { font-size:.8em; color:#6b7280; margin-top:2px; font-weight:400; display:block; }
+  .seg { display:flex; gap:0; border:1px solid #c7cfda; border-radius:10px; overflow:hidden; }
+  .seg button { border:0; background:#fff; padding:9px 14px; font-size:.95em; cursor:pointer; font-family:inherit; }
+  .seg button.on { background:var(--teal); color:#fff; font-weight:600; }
+  .cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
+  .card { border-radius:12px; padding:12px 14px; color:#fff; }
+  .card .k { font-size:.72em; text-transform:uppercase; letter-spacing:.06em; opacity:.85; }
+  .card .v { font-size:1.15em; font-weight:700; margin-top:2px; }
+  .card.lmp { background:var(--lmp); } .card.edd { background:var(--edd); }
+  .card.ga  { background:var(--ga); }  .card.tri { background:var(--teal); }
+  @media (max-width:480px){ .cards { grid-template-columns:1fr; } }
+  table { border-collapse:collapse; width:100%; margin:18px 0; font-size:.92em; }
+  th, td { border:1px solid #e2e7ee; padding:7px 10px; text-align:left; }
+  th { background:#f4f6f9; }
+  h2 { font-size:1.15em; margin-top:2em; }
+  .cta { background:var(--navy); color:#fff; border-radius:14px; padding:20px; margin:26px 0; text-align:center; }
+  .cta p { color:#aeb8c8; margin:6px 0 14px; font-size:.95em; }
+  .store-btn { display:inline-block; background:#fff; color:var(--navy); font-weight:600;
+               padding:11px 22px; border-radius:11px; text-decoration:none; }
+  .faq h3 { font-size:1em; margin:1.2em 0 .2em; }
+  .faq p { margin:.2em 0; color:#4b5563; font-size:.95em; }
+  .fine { font-size:.85em; color:#6b7280; }
+  a { color:var(--teal); }
+  .hero a { color:#8fd3e8; }
+  footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>IVF Due Date Calculator</h1>
+  <p>Enter the embryo transfer date and the transfer day — day-3, day-5 or day-6 —
+  and get the due date, the equivalent LMP and today's gestational age. No LMP needed.</p>
+</div>
+
+<main>
+  <div class="calc">
+    <div class="row">
+      <label>Embryo transfer date<span class="legend">fresh or frozen (FET)</span></label>
+      <span class="inputs"><input type="date" id="tDate" aria-label="Transfer date"></span>
+    </div>
+    <div class="row">
+      <label>Transfer day<span class="legend">embryo age at transfer</span></label>
+      <span class="inputs">
+        <span class="seg" role="group" aria-label="Transfer day">
+          <button type="button" data-day="3">Day-3</button>
+          <button type="button" data-day="5" class="on">Day-5</button>
+          <button type="button" data-day="6">Day-6</button>
+        </span>
+      </span>
+    </div>
+    <div class="cards">
+      <div class="card edd"><div class="k">Due date (EDD)</div><div class="v" id="oEdd">—</div></div>
+      <div class="card lmp"><div class="k">Equivalent LMP</div><div class="v" id="oLmp">—</div></div>
+      <div class="card ga"><div class="k">Gestational age today</div><div class="v" id="oGa">—</div></div>
+      <div class="card tri"><div class="k">Trimester</div><div class="v" id="oTri">—</div></div>
+    </div>
+  </div>
+
+  <h2>How the dates are calculated</h2>
+  <table>
+    <tr><th>Transfer type</th><th>Due date</th><th>Equivalent LMP</th></tr>
+    <tr><td>Day-3 embryo transfer</td><td>transfer + 263 days</td><td>transfer − 17 days</td></tr>
+    <tr><td>Day-5 (blastocyst) transfer</td><td>transfer + 261 days</td><td>transfer − 19 days</td></tr>
+    <tr><td>Day-6 (blastocyst) transfer</td><td>transfer + 260 days</td><td>transfer − 20 days</td></tr>
+  </table>
+  <p class="fine">Logic: a pregnancy is 266 days from fertilization, and the embryo was already
+  3, 5 or 6 days old at transfer — so EDD = transfer + (266 − embryo age). The equivalent LMP places
+  fertilization on "cycle day 14", which lets standard 40-week dating work as usual.</p>
+
+  <div class="cta">
+    <b>Partus: Pregnancy Wheel — IVF dating built in, including day-6.</b>
+    <p>OB wheel for clinicians: IVF transfer dating (day-3, day-5, day-6), ACOG ultrasound
+    redating and the Bishop score. The wheel keeps a visible note that dates came from IVF.
+    No account, no patient data stored, works offline.</p>
+    <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-ivf&amp;mt=8">Get Partus on the App&nbsp;Store</a>
+  </div>
+
+  <div class="faq">
+    <h2>Common questions</h2>
+    <h3>Why does the transfer day change the due date?</h3>
+    <p>Because the embryo's age is known exactly. A day-5 embryo is two days further along than a
+    day-3 embryo, so the due date lands two days earlier relative to the same transfer date.</p>
+    <h3>Does this work for frozen embryo transfers (FET)?</h3>
+    <p>Yes. What matters is the embryo's developmental age at transfer, not whether it was fresh
+    or frozen. A thawed day-5 blastocyst is dated as day-5.</p>
+    <h3>What about day-6 or day-7 blastocysts?</h3>
+    <p>Day-6 transfers use transfer + 260 days — most calculators skip this option. Day-7
+    transfers (rare) would follow the same logic at + 259 days; confirm dating with the
+    treating fertility clinic.</p>
+    <h3>Why is IVF dating more accurate than LMP dating?</h3>
+    <p>The fertilization date is known to the day, so there is no recall error and no cycle-length
+    assumption. ACOG treats IVF-derived dating as the most reliable method available.</p>
+    <h3>Can an ultrasound change an IVF due date?</h3>
+    <p>IVF dating is generally kept, because it is more precise than measurement-based estimates.
+    For non-IVF pregnancies, ultrasound may replace LMP dating — check our
+    <a href="/redating-calculator.html">ACOG redating calculator</a>.</p>
+  </div>
+
+  <h2>Source</h2>
+  <p class="fine">Methods for Estimating the Due Date. <em>ACOG Committee Opinion No. 700</em>, May 2017
+  (age-of-embryo method for ART pregnancies). This page is a reference tool for healthcare
+  professionals. It does not provide medical advice or diagnosis.</p>
+</main>
+
+<footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;
+<a href="/ob-wheel.html">OB Wheel Online</a> &middot;
+<a href="/redating-calculator.html">ACOG Redating Calculator</a> &middot;
+<a href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-ivf&amp;mt=8">Partus on the App Store</a></footer>
+
+<script>
+(function () {
+  var DAY = 86400000;
+  var tDate = document.getElementById('tDate'),
+      oEdd = document.getElementById('oEdd'), oLmp = document.getElementById('oLmp'),
+      oGa = document.getElementById('oGa'), oTri = document.getElementById('oTri'),
+      segBtns = document.querySelectorAll('.seg button');
+  var transferDay = 5;
+  var OFFSET = { 3: 263, 5: 261, 6: 260 };
+
+  function fmt(d) {
+    return d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+  }
+  function iso(d) {
+    var z = new Date(d.getTime() - d.getTimezoneOffset()*60000);
+    return z.toISOString().slice(0,10);
+  }
+  function parse(el) {
+    if (!el.value) return null;
+    var p = el.value.split('-');
+    return new Date(+p[0], +p[1]-1, +p[2]);
+  }
+  function today0() { var t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); }
+  function addDays(d, n) { var r = new Date(d); r.setDate(r.getDate() + n); return r; }
+  function gaStr(days) { return Math.floor(days/7) + ' w ' + (days%7) + ' d'; }
+
+  function calc() {
+    var d = parse(tDate);
+    if (!d) return;
+    var edd = addDays(d, OFFSET[transferDay]);
+    var lmp = addDays(edd, -280);
+    var ga = Math.round((today0() - lmp) / DAY);
+    oEdd.textContent = fmt(edd);
+    oLmp.textContent = fmt(lmp);
+    if (ga >= 0 && ga <= 308) {
+      oGa.textContent = gaStr(ga);
+      oTri.textContent = ga < 98 ? 'First' : ga < 196 ? 'Second' : 'Third';
+    } else {
+      oGa.textContent = '—'; oTri.textContent = '—';
+    }
+  }
+
+  segBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      segBtns.forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      transferDay = +b.dataset.day;
+      calc();
+    });
+  });
+
+  tDate.value = iso(today0());
+  tDate.addEventListener('change', calc);
+  calc();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OB Wheel Online — Free Pregnancy Wheel Calculator (EDD &amp; Gestational Age)</title>
+<meta name="description" content="Free online OB wheel (pregnancy wheel): enter LMP, due date or conception date and get the EDD, gestational age today, trimester and every milestone date instantly. Plus a reverse calculator from a known gestational age.">
+<link rel="canonical" href="https://partuswheel.app/ob-wheel.html">
+<link rel="icon" type="image/png" href="/icon.png">
+<meta name="apple-itunes-app" content="app-id=6796027980">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Partus">
+<meta property="og:title" content="OB Wheel Online — Pregnancy Wheel Calculator">
+<meta property="og:description" content="LMP, due date or conception in — EDD, gestational age and every milestone date out. A free online pregnancy wheel for clinicians.">
+<meta property="og:url" content="https://partuswheel.app/ob-wheel.html">
+<meta property="og:image" content="https://partuswheel.app/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "OB Wheel Online — Pregnancy Wheel Calculator",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "Any (web)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://partuswheel.app/ob-wheel.html",
+  "description": "Online OB wheel: computes estimated due date, gestational age, trimester and milestone dates from LMP, EDD or conception date, in both directions.",
+  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+}
+</script>
+<style>
+  :root { --navy:#0d1420; --card:#1a2332; --teal:#0A84A0;
+          --lmp:#2E9E6B; --usg:#D4548E; --edd:#7A5FD0; --ga:#D97A2B; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         margin:0; color:#1c2733; line-height:1.6; background:#fff; }
+  .hero { background:var(--navy); color:#fff; padding:44px 20px 36px; text-align:center; }
+  .hero h1 { font-size:1.6em; margin:0 0 8px; }
+  .hero p { color:#aeb8c8; max-width:560px; margin:0 auto; font-size:1em; }
+  main { max-width:640px; margin:0 auto; padding:28px 20px 20px; }
+  .calc { background:#f4f6f9; border:1px solid #e2e7ee; border-radius:14px; padding:20px; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+  .row label { flex:1 1 200px; font-weight:600; font-size:.95em; }
+  .row .inputs { display:flex; gap:8px; }
+  select, input[type=date] { font-size:1em; padding:8px 10px; border-radius:8px;
+         border:1px solid #c7cfda; background:#fff; font-family:inherit; }
+  .legend { font-size:.8em; color:#6b7280; margin-top:2px; font-weight:400; display:block; }
+  .cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
+  .card { border-radius:12px; padding:12px 14px; color:#fff; }
+  .card .k { font-size:.72em; text-transform:uppercase; letter-spacing:.06em; opacity:.85; }
+  .card .v { font-size:1.15em; font-weight:700; margin-top:2px; }
+  .card.lmp { background:var(--lmp); } .card.edd { background:var(--edd); }
+  .card.ga  { background:var(--ga); }  .card.tri { background:var(--teal); }
+  @media (max-width:480px){ .cards { grid-template-columns:1fr; } }
+  table { border-collapse:collapse; width:100%; margin:18px 0; font-size:.92em; }
+  th, td { border:1px solid #e2e7ee; padding:7px 10px; text-align:left; }
+  th { background:#f4f6f9; }
+  tr.active td { background:#fff3e6; font-weight:600; }
+  h2 { font-size:1.15em; margin-top:2em; }
+  .cta { background:var(--navy); color:#fff; border-radius:14px; padding:20px; margin:26px 0; text-align:center; }
+  .cta p { color:#aeb8c8; margin:6px 0 14px; font-size:.95em; }
+  .store-btn { display:inline-block; background:#fff; color:var(--navy); font-weight:600;
+               padding:11px 22px; border-radius:11px; text-decoration:none; }
+  .faq h3 { font-size:1em; margin:1.2em 0 .2em; }
+  .faq p { margin:.2em 0; color:#4b5563; font-size:.95em; }
+  .fine { font-size:.85em; color:#6b7280; }
+  a { color:var(--teal); }
+  .hero a { color:#8fd3e8; }
+  footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>OB Wheel Online — Pregnancy Wheel Calculator</h1>
+  <p>The classic cardboard pregnancy wheel, as a calculator. Enter the LMP, the due date
+  or the conception date — every other date recalculates instantly, in both directions.</p>
+</div>
+
+<main>
+  <div class="calc">
+    <div class="row">
+      <label>I know the<span class="legend">pick the date you are starting from</span></label>
+      <span class="inputs">
+        <select id="mode" aria-label="Known date type">
+          <option value="lmp" selected>Last menstrual period (LMP)</option>
+          <option value="edd">Due date (EDD)</option>
+          <option value="con">Conception date</option>
+        </select>
+      </span>
+    </div>
+    <div class="row">
+      <label id="dateLabel">LMP date</label>
+      <span class="inputs"><input type="date" id="theDate" aria-label="Known date"></span>
+    </div>
+    <div class="cards">
+      <div class="card lmp"><div class="k">LMP</div><div class="v" id="oLmp">—</div></div>
+      <div class="card edd"><div class="k">Due date (EDD)</div><div class="v" id="oEdd">—</div></div>
+      <div class="card ga"><div class="k">Gestational age today</div><div class="v" id="oGa">—</div></div>
+      <div class="card tri"><div class="k">Trimester</div><div class="v" id="oTri">—</div></div>
+    </div>
+  </div>
+
+  <h2>Milestone dates for this pregnancy</h2>
+  <table id="mst">
+    <tr><th>Gestational age</th><th>Date</th><th>Milestone</th></tr>
+  </table>
+  <p class="fine">The row for the current week is highlighted. EDD = LMP + 280 days (Naegele's rule);
+  trimesters per ACOG: first up to 13&nbsp;w&nbsp;6&nbsp;d, second 14&nbsp;w&nbsp;0&nbsp;d – 27&nbsp;w&nbsp;6&nbsp;d,
+  third from 28&nbsp;w&nbsp;0&nbsp;d.</p>
+
+  <h2>Reverse calculator: known gestational age on a date</h2>
+  <p class="fine">"The patient was 12&nbsp;w&nbsp;0&nbsp;d on March&nbsp;3rd" — reconstruct the LMP and the due date.</p>
+  <div class="calc">
+    <div class="row">
+      <label>Gestational age<span class="legend">as documented</span></label>
+      <span class="inputs">
+        <select id="rw" aria-label="Weeks"></select>
+        <select id="rd" aria-label="Days"></select>
+      </span>
+    </div>
+    <div class="row">
+      <label>On date</label>
+      <span class="inputs"><input type="date" id="rDate" aria-label="Date of that gestational age"></span>
+    </div>
+    <div class="cards">
+      <div class="card lmp"><div class="k">LMP</div><div class="v" id="rLmp">—</div></div>
+      <div class="card edd"><div class="k">Due date (EDD)</div><div class="v" id="rEdd">—</div></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Partus: Pregnancy Wheel — the OB wheel that fits in your pocket.</b>
+    <p>One screen with every date, editable in both directions, plus ACOG ultrasound redating,
+    IVF transfer dating and the Bishop score. No account, no patient data stored, works offline.</p>
+    <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-obwheel&amp;mt=8">Get Partus on the App&nbsp;Store</a>
+  </div>
+
+  <div class="faq">
+    <h2>Common questions</h2>
+    <h3>How is the due date calculated?</h3>
+    <p>By Naegele's rule: the estimated due date (EDD) is 280 days — 40 weeks — after the first day
+    of the last menstrual period, assuming a 28-day cycle with ovulation on day 14. From a conception
+    date, the EDD is conception + 266 days.</p>
+    <h3>What if the ultrasound disagrees with these dates?</h3>
+    <p>ACOG defines thresholds for when ultrasound dating should replace LMP dating. Check the
+    difference in our free <a href="/redating-calculator.html">ACOG redating calculator</a>.</p>
+    <h3>Gestational age vs. fetal age — what's the difference?</h3>
+    <p>Gestational age counts from the LMP; fetal (embryonic) age counts from conception and is about
+    two weeks less. Clinical dating uses gestational age.</p>
+    <h3>What about IVF pregnancies?</h3>
+    <p>IVF pregnancies are dated from the embryo transfer: EDD = transfer date + 263 days (day-3),
+    + 261 days (day-5) or + 260 days (day-6). No LMP is needed. The Partus app computes these directly.</p>
+    <h3>How accurate is a pregnancy wheel?</h3>
+    <p>A physical wheel is read to roughly ±1–2 days because of its printed scale; this calculator does
+    the same arithmetic exactly. Dating accuracy itself depends on how the pregnancy is dated — early
+    ultrasound is accurate to about ±5–7 days, LMP recall varies more.</p>
+  </div>
+
+  <h2>Source</h2>
+  <p class="fine">Methods for Estimating the Due Date. <em>ACOG Committee Opinion No. 700</em>, May 2017.
+  This page is a reference tool for healthcare professionals. It does not provide medical advice or diagnosis.</p>
+</main>
+
+<footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;
+<a href="/redating-calculator.html">ACOG Redating Calculator</a> &middot;
+<a href="/ivf-due-date-calculator.html">IVF Due Date Calculator</a> &middot;
+<a href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-obwheel&amp;mt=8">Partus on the App Store</a></footer>
+
+<script>
+(function () {
+  var DAY = 86400000;
+  var mode = document.getElementById('mode'), theDate = document.getElementById('theDate'),
+      dateLabel = document.getElementById('dateLabel'),
+      oLmp = document.getElementById('oLmp'), oEdd = document.getElementById('oEdd'),
+      oGa = document.getElementById('oGa'), oTri = document.getElementById('oTri'),
+      mst = document.getElementById('mst');
+
+  var MILESTONES = [
+    [0,   'LMP — dating starts'],
+    [98,  'Second trimester begins (14w0d)'],
+    [140, 'Anatomy scan window (18–22w)'],
+    [168, 'Viability threshold (24w0d)'],
+    [196, 'Third trimester begins (28w0d)'],
+    [252, 'Weekly-visit range begins (36w0d)'],
+    [259, 'Early term (37w0d)'],
+    [273, 'Full term (39w0d)'],
+    [280, 'Estimated due date (40w0d)'],
+    [287, 'Late term (41w0d)'],
+    [294, 'Post-term (42w0d)']
+  ];
+
+  function fmt(d) {
+    return d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+  }
+  function iso(d) {
+    var z = new Date(d.getTime() - d.getTimezoneOffset()*60000);
+    return z.toISOString().slice(0,10);
+  }
+  function parse(el) {
+    if (!el.value) return null;
+    var p = el.value.split('-');
+    return new Date(+p[0], +p[1]-1, +p[2]);
+  }
+  function today0() { var t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); }
+  function addDays(d, n) { var r = new Date(d); r.setDate(r.getDate() + n); return r; }
+  function gaStr(days) { return Math.floor(days/7) + ' w ' + (days%7) + ' d'; }
+
+  function labelFor(m) {
+    return m === 'lmp' ? 'LMP date' : m === 'edd' ? 'Due date' : 'Conception date';
+  }
+
+  function calc() {
+    dateLabel.textContent = labelFor(mode.value);
+    var d = parse(theDate);
+    if (!d) return;
+    var lmp;
+    if (mode.value === 'lmp') lmp = d;
+    else if (mode.value === 'edd') lmp = addDays(d, -280);
+    else lmp = addDays(d, -14);
+    var edd = addDays(lmp, 280);
+    var ga = Math.round((today0() - lmp) / DAY);
+
+    oLmp.textContent = fmt(lmp);
+    oEdd.textContent = fmt(edd);
+    if (ga >= 0 && ga <= 308) {
+      oGa.textContent = gaStr(ga);
+      oTri.textContent = ga < 98 ? 'First' : ga < 196 ? 'Second' : 'Third';
+    } else {
+      oGa.textContent = '—';
+      oTri.textContent = '—';
+    }
+
+    while (mst.rows.length > 1) mst.deleteRow(1);
+    MILESTONES.forEach(function (m) {
+      var r = mst.insertRow(-1);
+      var date = addDays(lmp, m[0]);
+      r.insertCell(0).textContent = gaStr(m[0]);
+      r.insertCell(1).textContent = fmt(date);
+      r.insertCell(2).textContent = m[1];
+      if (ga >= 0 && Math.floor(ga/7) === Math.floor(m[0]/7)) r.className = 'active';
+    });
+  }
+
+  var rw = document.getElementById('rw'), rd = document.getElementById('rd'),
+      rDate = document.getElementById('rDate'),
+      rLmp = document.getElementById('rLmp'), rEdd = document.getElementById('rEdd');
+  for (var i = 0; i <= 44; i++) { var o = document.createElement('option');
+    o.value = i; o.textContent = i + ' w'; if (i === 12) o.selected = true; rw.appendChild(o); }
+  for (var j = 0; j <= 6; j++) { var o2 = document.createElement('option');
+    o2.value = j; o2.textContent = j + ' d'; rd.appendChild(o2); }
+
+  function calcReverse() {
+    var d = parse(rDate);
+    if (!d) return;
+    var days = (+rw.value)*7 + (+rd.value);
+    var lmp = addDays(d, -days);
+    rLmp.textContent = fmt(lmp);
+    rEdd.textContent = fmt(addDays(lmp, 280));
+  }
+
+  theDate.value = iso(addDays(today0(), -70));
+  rDate.value = iso(today0());
+  mode.addEventListener('change', calc);
+  theDate.addEventListener('change', calc);
+  [rw, rd, rDate].forEach(function (s) { s.addEventListener('change', calcReverse); });
+  calc(); calcReverse();
+})();
+</script>
+
+</body>
+</html>
