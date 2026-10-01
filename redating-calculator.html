@@ -24,7 +24,48 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://partuswheel.app/redating-calculator.html",
   "description": "Compares LMP-based and ultrasound-based gestational age and applies ACOG Committee Opinion 700 redating thresholds.",
-  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+  "author": { "@type": "Organization", "name": "55DIGITS LLC", "url": "https://partuswheel.app/" },
+  "dateModified": "2026-10-01"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why did the due date change after an ultrasound?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Early ultrasound measures the embryo directly and is accurate to within days, while LMP dating relies on recall and an assumed 28-day cycle. When the two disagree by more than the ACOG threshold for that gestational age, the ultrasound date is adopted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does redating work in both directions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The rule applies whether the ultrasound is behind or ahead of the LMP dates — only the size of the difference matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do the thresholds grow with gestational age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First-trimester crown-rump length dates a pregnancy to within about 5–7 days; later in pregnancy fetal size varies more between individuals, so a larger discrepancy is needed before the calendar is overruled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the LMP is unknown or unreliable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ultrasound dating is used from the start — there is nothing to redate against."
+      }
+    }
+  ]
 }
 </script>
 <style>
@@ -62,6 +103,14 @@
   .faq p { margin:.2em 0; color:#4b5563; font-size:.95em; }
   .fine { font-size:.85em; color:#6b7280; }
   a { color:var(--teal); }
+  .qa { background:#eef6f9; border-left:4px solid var(--teal); border-radius:10px;
+        padding:12px 16px; margin:0 0 20px; font-size:.97em; }
+  .qa b.lbl { display:block; font-size:.75em; text-transform:uppercase; letter-spacing:.06em;
+        color:var(--teal); margin-bottom:2px; }
+  .qa p { margin:0; }
+  .method p, .method li { font-size:.9em; color:#4b5563; }
+  .method ul { padding-left:1.2em; margin:.4em 0; }
+  .reviewed { font-size:.85em; color:#6b7280; margin-top:.8em; }
   footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
 </style>
 </head>
@@ -75,6 +124,8 @@
 </div>
 
 <main>
+  <div class="qa"><b class="lbl">Quick answer</b><p>Per ACOG Committee Opinion 700, redate to the ultrasound when the difference between LMP and ultrasound gestational age is <strong>more than 5 days before 9w0d</strong>, more than 7 days at 9w0d–15w6d, more than 10 days at 16w0d–21w6d, more than 14 days at 22w0d–27w6d, and more than 21 days from 28w0d. The window is chosen by the ultrasound gestational age.</p></div>
+
   <div class="calc">
     <div class="row">
       <label>Gestational age by LMP<span class="legend">on the day of the ultrasound</span></label>
@@ -129,9 +180,20 @@
     <p>Ultrasound dating is used from the start — there is nothing to redate against.</p>
   </div>
 
-  <h2>Source</h2>
-  <p class="fine">Methods for Estimating the Due Date. <em>ACOG Committee Opinion No. 700</em>, May 2017.
-  This page is a reference tool for healthcare professionals. It does not provide medical advice or diagnosis.</p>
+  <div class="method">
+  <h2>Methodology &amp; sources</h2>
+  <ul>
+    <li>Both gestational ages are converted to days (weeks &times; 7 + days); the absolute difference is compared with the threshold.</li>
+    <li>The threshold window is selected by the <strong>ultrasound</strong> gestational age, as in the ACOG table.</li>
+    <li>Redating is recommended only when the difference <strong>exceeds</strong> the threshold; a difference equal to it keeps LMP dating.</li>
+  </ul>
+  <p>Source: Methods for Estimating the Due Date. <em>ACOG Committee Opinion No.&nbsp;700</em>, May 2017.
+  All arithmetic runs in your browser; nothing you enter is sent anywhere. The same rules power the
+  Partus iOS app. This page is a reference tool for healthcare professionals. It does not provide
+  medical advice or diagnosis.</p>
+  <p class="reviewed">Last reviewed: <time datetime="2026-10-01">October 1, 2026</time> &middot; Published by 55DIGITS LLC &middot;
+  Corrections: <a href="mailto:ep@tommano.com">ep@tommano.com</a></p>
+  </div>
 </main>
 
 <footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;

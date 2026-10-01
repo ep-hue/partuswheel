@@ -24,7 +24,64 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://partuswheel.app/ivf-due-date-calculator.html",
   "description": "Computes the estimated due date, equivalent LMP and gestational age from an IVF embryo transfer date (day-3, day-5 or day-6 transfer).",
-  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+  "author": { "@type": "Organization", "name": "55DIGITS LLC", "url": "https://partuswheel.app/" },
+  "dateModified": "2026-10-01"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does the transfer day change the due date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the embryo's age is known exactly. A day-5 embryo is two days further along than a day-3 embryo, so the due date lands two days earlier relative to the same transfer date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this work for frozen embryo transfers (FET)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. What matters is the embryo's developmental age at transfer, not whether it was fresh or frozen. A thawed day-5 blastocyst is dated as day-5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about day-6 or day-7 blastocysts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Day-6 transfers use transfer + 260 days — most calculators skip this option. Day-7 transfers (rare) would follow the same logic at + 259 days; confirm dating with the treating fertility clinic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my clinic give the same due date for a day-5, day-6 or day-7 frozen transfer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some fertility clinics date a frozen embryo transfer by the treatment cycle (for example the progesterone start or the scheduled transfer day) rather than by the embryo's age, so day-5, day-6 and day-7 blastocysts transferred on the same day get the same due date. This calculator uses the embryo-age method from ACOG Committee Opinion 700: each extra day of embryo age moves the due date one day earlier (day-5 = transfer + 261, day-6 = + 260, day-7 = + 259). The difference is only 1–2 days; for the medical record, follow the dating convention of the treating clinic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is IVF dating more accurate than LMP dating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fertilization date is known to the day, so there is no recall error and no cycle-length assumption. ACOG treats IVF-derived dating as the most reliable method available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an ultrasound change an IVF due date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IVF dating is generally kept, because it is more precise than measurement-based estimates. For non-IVF pregnancies, ultrasound may replace LMP dating — check our ACOG redating calculator."
+      }
+    }
+  ]
 }
 </script>
 <style>
@@ -67,6 +124,14 @@
   .fine { font-size:.85em; color:#6b7280; }
   a { color:var(--teal); }
   .hero a { color:#8fd3e8; }
+  .qa { background:#eef6f9; border-left:4px solid var(--teal); border-radius:10px;
+        padding:12px 16px; margin:0 0 20px; font-size:.97em; }
+  .qa b.lbl { display:block; font-size:.75em; text-transform:uppercase; letter-spacing:.06em;
+        color:var(--teal); margin-bottom:2px; }
+  .qa p { margin:0; }
+  .method p, .method li { font-size:.9em; color:#4b5563; }
+  .method ul { padding-left:1.2em; margin:.4em 0; }
+  .reviewed { font-size:.85em; color:#6b7280; margin-top:.8em; }
   footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
 </style>
 </head>
@@ -79,6 +144,8 @@
 </div>
 
 <main>
+  <div class="qa"><b class="lbl">Quick answer</b><p>IVF due date = embryo transfer date <strong>+ 263 days</strong> for a day-3 embryo, <strong>+ 261 days</strong> for a day-5 blastocyst and <strong>+ 260 days</strong> for a day-6 blastocyst, fresh or frozen. Equivalent LMP = due date &minus; 280 days. No LMP is needed.</p></div>
+
   <div class="calc">
     <div class="row">
       <label>Embryo transfer date<span class="legend">fresh or frozen (FET)</span></label>
@@ -133,6 +200,13 @@
     <p>Day-6 transfers use transfer + 260 days — most calculators skip this option. Day-7
     transfers (rare) would follow the same logic at + 259 days; confirm dating with the
     treating fertility clinic.</p>
+    <h3>Why does my clinic give the same due date for a day-5, day-6 or day-7 frozen transfer?</h3>
+    <p>Some fertility clinics date a frozen embryo transfer by the treatment cycle (for example the
+    progesterone start or the scheduled transfer day) rather than by the embryo's age, so day-5, day-6
+    and day-7 blastocysts transferred on the same day get the same due date. This calculator uses the
+    embryo-age method from ACOG Committee Opinion 700: each extra day of embryo age moves the due date
+    one day earlier (day-5 = transfer + 261, day-6 = + 260, day-7 = + 259). The difference is only
+    1–2 days; for the medical record, follow the dating convention of the treating clinic.</p>
     <h3>Why is IVF dating more accurate than LMP dating?</h3>
     <p>The fertilization date is known to the day, so there is no recall error and no cycle-length
     assumption. ACOG treats IVF-derived dating as the most reliable method available.</p>
@@ -142,10 +216,21 @@
     <a href="/redating-calculator.html">ACOG redating calculator</a>.</p>
   </div>
 
-  <h2>Source</h2>
-  <p class="fine">Methods for Estimating the Due Date. <em>ACOG Committee Opinion No. 700</em>, May 2017
-  (age-of-embryo method for ART pregnancies). This page is a reference tool for healthcare
-  professionals. It does not provide medical advice or diagnosis.</p>
+  <div class="method">
+  <h2>Methodology &amp; sources</h2>
+  <ul>
+    <li>A pregnancy lasts 266 days from fertilization; the embryo is already 3, 5 or 6 days old at transfer, so EDD = transfer + (266 &minus; embryo age).</li>
+    <li>Day-3 and day-5 offsets (263 and 261 days) are the ones given in ACOG CO 700; day-6 (260) and day-7 (259) follow the same arithmetic.</li>
+    <li>Equivalent LMP = EDD &minus; 280 days, which places fertilization on cycle day 14 so standard 40-week dating applies.</li>
+    <li>Gestational age today = today &minus; equivalent LMP, shown as weeks + days.</li>
+  </ul>
+  <p>Source: Methods for Estimating the Due Date. <em>ACOG Committee Opinion No.&nbsp;700</em>, May 2017 (age-of-embryo method for ART pregnancies).
+  All arithmetic runs in your browser; nothing you enter is sent anywhere. The same rules power the
+  Partus iOS app. This page is a reference tool for healthcare professionals. It does not provide
+  medical advice or diagnosis.</p>
+  <p class="reviewed">Last reviewed: <time datetime="2026-10-01">October 1, 2026</time> &middot; Published by 55DIGITS LLC &middot;
+  Corrections: <a href="mailto:ep@tommano.com">ep@tommano.com</a></p>
+  </div>
 </main>
 
 <footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;

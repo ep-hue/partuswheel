@@ -32,7 +32,20 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://partuswheel.app/",
   "installUrl": "https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980",
-  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+  "author": { "@type": "Organization", "name": "55DIGITS LLC", "url": "https://partuswheel.app/" },
+  "dateModified": "2026-10-01"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "55DIGITS LLC",
+  "url": "https://partuswheel.app/",
+  "logo": "https://partuswheel.app/icon.png",
+  "email": "ep@tommano.com",
+  "sameAs": ["https://www.facebook.com/profile.php?id=61593660262211",
+             "https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980"]
 }
 </script>
 <style>
@@ -57,6 +70,12 @@
   .feat b { display:block; }
   .feat p { margin:2px 0 0; color:#4b5563; font-size:.95em; }
   a { color:var(--teal); }
+  .calcs { display:grid; grid-template-columns:1fr; gap:10px; margin:14px 0; }
+  .calcs a { display:block; border:1px solid #e2e7ee; border-radius:12px; padding:12px 16px;
+             text-decoration:none; color:#1c2733; background:#f8fafc; }
+  .calcs a:hover { border-color:var(--teal); }
+  .calcs b { color:var(--teal); display:block; }
+  .calcs span { font-size:.92em; color:#4b5563; }
   footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
 </style>
 </head>
@@ -79,6 +98,24 @@
 </div>
 
 <main>
+  <h2 id="what-is-partus">What is Partus?</h2>
+  <p>Partus is an iPhone and iPad pregnancy wheel (OB wheel) for healthcare professionals. It calculates
+  gestational age and the due date from the LMP, conception date, ultrasound or IVF transfer, applies the
+  ACOG Committee Opinion 700 ultrasound redating thresholds, and computes the Bishop score. It is free to
+  download with a one-time unlock for the advanced tools, needs no account, collects no data and works
+  offline.</p>
+
+  <h2 id="calculators">Free clinical calculators</h2>
+  <p>The core dating rules from the app, free in your browser — no download, no sign-up.</p>
+  <div class="calcs">
+    <a href="/ob-wheel.html"><b>OB Wheel Online &rarr;</b>
+      <span>LMP, due date or conception &rarr; every other date, gestational age today and milestone dates. EDD = LMP + 280 days.</span></a>
+    <a href="/redating-calculator.html"><b>ACOG Ultrasound Redating Calculator &rarr;</b>
+      <span>LMP vs ultrasound gestational age &rarr; redate or keep, using the ACOG CO 700 thresholds (5 / 7 / 10 / 14 / 21 days).</span></a>
+    <a href="/ivf-due-date-calculator.html"><b>IVF Due Date Calculator &rarr;</b>
+      <span>Embryo transfer date &rarr; due date for day-3 (+263), day-5 (+261) and day-6 (+260) transfers, fresh or frozen.</span></a>
+  </div>
+
   <h2>A pregnancy wheel built for clinicians — not another baby tracker</h2>
 
   <div class="feat"><span class="dot" style="background:var(--usg)"></span>
@@ -127,7 +164,9 @@
 
   <h2 id="disclaimer">Disclaimer</h2>
   <p>Partus is a reference calculator for healthcare professionals.
-  It does not provide medical advice or diagnosis.</p>
+  It does not provide medical advice or diagnosis. Calculation rules follow ACOG Committee
+  Opinion No.&nbsp;700 (2017) and Bishop (1964); each calculator page lists its formulas.</p>
+  <p style="font-size:.85em;color:#6b7280">Last updated: <time datetime="2026-10-01">October 1, 2026</time></p>
 </main>
 
 <footer>&copy; 2026 55DIGITS LLC &middot; <a href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-partuswheel&amp;mt=8">Partus on the App Store</a> &middot; <a href="https://www.facebook.com/profile.php?id=61593660262211">Facebook</a> &middot; <a href="/redating-calculator.html">Free ACOG Redating Calculator</a> &middot; <a href="/ob-wheel.html">Free OB Wheel Online</a> &middot; <a href="/ivf-due-date-calculator.html">Free IVF Due Date Calculator</a></footer>

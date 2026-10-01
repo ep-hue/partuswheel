@@ -24,7 +24,56 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "url": "https://partuswheel.app/ob-wheel.html",
   "description": "Online OB wheel: computes estimated due date, gestational age, trimester and milestone dates from LMP, EDD or conception date, in both directions.",
-  "author": { "@type": "Organization", "name": "55DIGITS LLC" }
+  "author": { "@type": "Organization", "name": "55DIGITS LLC", "url": "https://partuswheel.app/" },
+  "dateModified": "2026-10-01"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is the due date calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By Naegele's rule: the estimated due date (EDD) is 280 days — 40 weeks — after the first day of the last menstrual period, assuming a 28-day cycle with ovulation on day 14. From a conception date, the EDD is conception + 266 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the ultrasound disagrees with these dates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACOG defines thresholds for when ultrasound dating should replace LMP dating. Check the difference in our free ACOG redating calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gestational age vs. fetal age — what's the difference?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gestational age counts from the LMP; fetal (embryonic) age counts from conception and is about two weeks less. Clinical dating uses gestational age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about IVF pregnancies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IVF pregnancies are dated from the embryo transfer: EDD = transfer date + 263 days (day-3), + 261 days (day-5) or + 260 days (day-6). No LMP is needed. The Partus app computes these directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is a pregnancy wheel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A physical wheel is read to roughly ±1–2 days because of its printed scale; this calculator does the same arithmetic exactly. Dating accuracy itself depends on how the pregnancy is dated — early ultrasound is accurate to about ±5–7 days, LMP recall varies more."
+      }
+    }
+  ]
 }
 </script>
 <style>
@@ -65,6 +114,14 @@
   .fine { font-size:.85em; color:#6b7280; }
   a { color:var(--teal); }
   .hero a { color:#8fd3e8; }
+  .qa { background:#eef6f9; border-left:4px solid var(--teal); border-radius:10px;
+        padding:12px 16px; margin:0 0 20px; font-size:.97em; }
+  .qa b.lbl { display:block; font-size:.75em; text-transform:uppercase; letter-spacing:.06em;
+        color:var(--teal); margin-bottom:2px; }
+  .qa p { margin:0; }
+  .method p, .method li { font-size:.9em; color:#4b5563; }
+  .method ul { padding-left:1.2em; margin:.4em 0; }
+  .reviewed { font-size:.85em; color:#6b7280; margin-top:.8em; }
   footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
 </style>
 </head>
@@ -77,6 +134,8 @@
 </div>
 
 <main>
+  <div class="qa"><b class="lbl">Quick answer</b><p>Due date (EDD) = first day of the LMP <strong>+ 280 days</strong> (40 weeks, Naegele's rule); from a known conception date, EDD = conception <strong>+ 266 days</strong>. Gestational age is the number of days since the LMP, written as weeks + days.</p></div>
+
   <div class="calc">
     <div class="row">
       <label>I know the<span class="legend">pick the date you are starting from</span></label>
@@ -156,9 +215,22 @@
     ultrasound is accurate to about ±5–7 days, LMP recall varies more.</p>
   </div>
 
-  <h2>Source</h2>
-  <p class="fine">Methods for Estimating the Due Date. <em>ACOG Committee Opinion No. 700</em>, May 2017.
-  This page is a reference tool for healthcare professionals. It does not provide medical advice or diagnosis.</p>
+  <div class="method">
+  <h2>Methodology &amp; sources</h2>
+  <ul>
+    <li>EDD = LMP + 280 days; conception = LMP + 14 days; EDD = conception + 266 days (28-day cycle assumed).</li>
+    <li>Gestational age today = today &minus; LMP, in whole days, shown as weeks + days.</li>
+    <li>Trimesters per ACOG: first up to 13w6d, second 14w0d–27w6d, third from 28w0d.</li>
+    <li>Reverse calculator: LMP = documented date &minus; documented gestational age; EDD = LMP + 280 days.</li>
+    <li>Dates are added in calendar days in your local time zone, so daylight-saving changes do not shift results.</li>
+  </ul>
+  <p>Source: Methods for Estimating the Due Date. <em>ACOG Committee Opinion No.&nbsp;700</em>, May 2017.
+  All arithmetic runs in your browser; nothing you enter is sent anywhere. The same rules power the
+  Partus iOS app. This page is a reference tool for healthcare professionals. It does not provide
+  medical advice or diagnosis.</p>
+  <p class="reviewed">Last reviewed: <time datetime="2026-10-01">October 1, 2026</time> &middot; Published by 55DIGITS LLC &middot;
+  Corrections: <a href="mailto:ep@tommano.com">ep@tommano.com</a></p>
+  </div>
 </main>
 
 <footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;

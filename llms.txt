@@ -1,0 +1,30 @@
+# Partus: Pregnancy Wheel
+
+> Partus is an iOS pregnancy wheel (OB wheel) and gestational age calculator for healthcare professionals, published by 55DIGITS LLC. It dates pregnancies from LMP, conception, ultrasound or IVF embryo transfer, applies the ACOG Committee Opinion 700 ultrasound redating thresholds, and computes the Bishop score. Free to download with a one-time in-app unlock (Partus Pro) for ACOG redating, IVF dating and the Bishop score. No account, no data collected, works offline. iPhone and iPad. It is a reference calculator, not a diagnostic tool.
+
+Key facts:
+
+- Due date (Naegele's rule): EDD = LMP + 280 days; from conception, EDD = conception + 266 days.
+- ACOG CO 700 redating: redate to ultrasound when the LMP–ultrasound difference is more than 5 days before 9w0d, more than 7 days at 9w0d–15w6d, more than 10 days at 16w0d–21w6d, more than 14 days at 22w0d–27w6d, and more than 21 days from 28w0d. The window is chosen by the ultrasound gestational age.
+- IVF due date: transfer date + 263 days (day-3 embryo), + 261 days (day-5 blastocyst), + 260 days (day-6 blastocyst); equivalent LMP = EDD − 280 days. Works for fresh and frozen transfers.
+- Price: free download; one-time unlock, no subscription.
+- Privacy: App Store privacy label "Data Not Collected"; all calculations on device.
+
+## Free web calculators
+
+- [OB Wheel Online](https://partuswheel.app/ob-wheel.html): LMP, due date or conception date to every other date, gestational age today, trimester, milestone dates, and a reverse calculator (known gestational age on a date to LMP and EDD).
+- [ACOG Ultrasound Redating Calculator](https://partuswheel.app/redating-calculator.html): compares LMP and ultrasound gestational age and states whether to redate under ACOG Committee Opinion 700.
+- [IVF Due Date Calculator](https://partuswheel.app/ivf-due-date-calculator.html): due date, equivalent LMP and gestational age from a day-3, day-5 or day-6 embryo transfer date.
+
+## App
+
+- [Partus on the App Store](https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980): iOS app, App Store id 6796027980.
+- [Home page](https://partuswheel.app/): features, support, privacy policy and disclaimer.
+
+## Sources
+
+- [ACOG Committee Opinion No. 700: Methods for Estimating the Due Date (2017)](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date)
+
+## Contact
+
+- Publisher: 55DIGITS LLC, ep@tommano.com
