@@ -16,7 +16,7 @@ Key facts:
 - [Pregnancy Wheel Calculator (OB Wheel Online)](https://partuswheel.app/ob-wheel.html): LMP, due date or conception date to every other date, gestational age today, trimester, milestone dates, and a reverse calculator (known gestational age on a date to LMP and EDD).
 - [ACOG Ultrasound Redating Calculator](https://partuswheel.app/redating-calculator.html): compares LMP and ultrasound gestational age and states whether to redate under ACOG Committee Opinion 700.
 - [IVF & FET Due Date Calculator](https://partuswheel.app/ivf-due-date-calculator.html): due date, equivalent LMP and gestational age from a day-3, day-5 or day-6 embryo transfer date, fresh or frozen.
-- [Bishop Score Calculator](https://partuswheel.app/bishop-score-calculator.html): Bishop score (0–13) from dilation, effacement, station, consistency and position, with ACOG Practice Bulletin 107 interpretation (≤6 unfavorable, >8 favorable).
+- [Bishop Score Calculator](https://partuswheel.app/bishop-score-calculator.html): Bishop score (0–13) from dilation, effacement, station, consistency and position, interpreted with the common convention used in NICE NG207 (≤6 unfavorable, 7 intermediate, ≥8 favorable); ACOG's 2025 guideline notes there is no universally accepted cut-off.
 
 ## App
 
@@ -25,8 +25,8 @@ Key facts:
 
 ## Sources
 
-- [ACOG Committee Opinion No. 700: Methods for Estimating the Due Date (2017)](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date)
-- Induction of Labor. ACOG Practice Bulletin No. 107 (2009); Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol 1964;24:266–268.
+- [ACOG Committee Opinion No. 700: Methods for Estimating the Due Date (2017, reaffirmed 2025)](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date)
+- Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol 1964;24:266–268. ACOG Clinical Practice Guideline No. 9: Cervical Ripening in Pregnancy (2025). NICE NG207: Inducing labour (2021).
 
 ## Contact
 
