@@ -7,14 +7,16 @@ Key facts:
 - Due date (Naegele's rule): EDD = LMP + 280 days; from conception, EDD = conception + 266 days.
 - ACOG CO 700 redating: redate to ultrasound when the LMP–ultrasound difference is more than 5 days before 9w0d, more than 7 days at 9w0d–15w6d, more than 10 days at 16w0d–21w6d, more than 14 days at 22w0d–27w6d, and more than 21 days from 28w0d. The window is chosen by the ultrasound gestational age.
 - IVF due date: transfer date + 263 days (day-3 embryo), + 261 days (day-5 blastocyst), + 260 days (day-6 blastocyst); equivalent LMP = EDD − 280 days. Works for fresh and frozen transfers.
+- Bishop score: dilation (0–3) + effacement (0–3) + station (0–3) + consistency (0–2) + position (0–2) = 0–13.
 - Price: free download; one-time unlock, no subscription.
 - Privacy: App Store privacy label "Data Not Collected"; all calculations on device.
 
 ## Free web calculators
 
-- [OB Wheel Online](https://partuswheel.app/ob-wheel.html): LMP, due date or conception date to every other date, gestational age today, trimester, milestone dates, and a reverse calculator (known gestational age on a date to LMP and EDD).
+- [Pregnancy Wheel Calculator (OB Wheel Online)](https://partuswheel.app/ob-wheel.html): LMP, due date or conception date to every other date, gestational age today, trimester, milestone dates, and a reverse calculator (known gestational age on a date to LMP and EDD).
 - [ACOG Ultrasound Redating Calculator](https://partuswheel.app/redating-calculator.html): compares LMP and ultrasound gestational age and states whether to redate under ACOG Committee Opinion 700.
-- [IVF Due Date Calculator](https://partuswheel.app/ivf-due-date-calculator.html): due date, equivalent LMP and gestational age from a day-3, day-5 or day-6 embryo transfer date.
+- [IVF & FET Due Date Calculator](https://partuswheel.app/ivf-due-date-calculator.html): due date, equivalent LMP and gestational age from a day-3, day-5 or day-6 embryo transfer date, fresh or frozen.
+- [Bishop Score Calculator](https://partuswheel.app/bishop-score-calculator.html): Bishop score (0–13) from dilation, effacement, station, consistency and position, with ACOG Practice Bulletin 107 interpretation (≤6 unfavorable, >8 favorable).
 
 ## App
 
@@ -24,6 +26,7 @@ Key facts:
 ## Sources
 
 - [ACOG Committee Opinion No. 700: Methods for Estimating the Due Date (2017)](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/05/methods-for-estimating-the-due-date)
+- Induction of Labor. ACOG Practice Bulletin No. 107 (2009); Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol 1964;24:266–268.
 
 ## Contact
 

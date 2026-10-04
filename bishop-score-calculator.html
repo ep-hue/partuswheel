@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bishop Score Calculator — Cervical Favorability for Labor Induction</title>
+<meta name="description" content="Free Bishop score calculator: score dilation, effacement, station, consistency and position (0–13) and see whether the cervix is favorable for labor induction, with ACOG Practice Bulletin 107 thresholds.">
+<link rel="canonical" href="https://partuswheel.app/bishop-score-calculator.html">
+<link rel="icon" type="image/png" href="/icon.png">
+<meta name="apple-itunes-app" content="app-id=6796027980">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Partus">
+<meta property="og:title" content="Bishop Score Calculator — Is the Cervix Favorable?">
+<meta property="og:description" content="Five cervical parameters, instant 0–13 score and interpretation for labor induction. Free, no sign-up.">
+<meta property="og:url" content="https://partuswheel.app/bishop-score-calculator.html">
+<meta property="og:image" content="https://partuswheel.app/icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bishop Score Calculator",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "Any (web)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://partuswheel.app/bishop-score-calculator.html",
+  "description": "Calculates the Bishop score (0–13) from cervical dilation, effacement, fetal station, cervical consistency and position, and interprets cervical favorability for labor induction.",
+  "author": { "@type": "Organization", "name": "55DIGITS LLC", "url": "https://partuswheel.app/" },
+  "dateModified": "2026-10-01"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Bishop score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A pre-induction assessment of the cervix described by Edward Bishop in 1964. Five findings from a vaginal exam — dilation, effacement, fetal station, consistency and position — are each given 0–3 or 0–2 points, for a total of 0 to 13. Higher scores mean a more favorable (riper) cervix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Bishop score is favorable for induction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACOG Practice Bulletin 107 states that with a total score above 8, the probability of vaginal delivery after induction is similar to that after spontaneous labor, and that an unfavorable cervix has generally been defined as a score of 6 or less in most randomized trials. Exact cut-offs vary between protocols."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an unfavorable cervix change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With an unfavorable cervix, induction protocols typically start with cervical ripening (mechanical or pharmacologic methods) before oxytocin. The choice of method follows the local protocol and the clinical situation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is fetal station scored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the −3 to +3 scale relative to the ischial spines: −3 scores 0, −2 scores 1, −1 or 0 scores 2, and +1 or +2 scores 3."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the modified Bishop score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some modified versions replace effacement with cervical length measured in centimeters. This calculator uses the original five-component Bishop score."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root { --navy:#0d1420; --card:#1a2332; --teal:#0A84A0;
+          --lmp:#2E9E6B; --usg:#D4548E; --edd:#7A5FD0; --ga:#D97A2B; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         margin:0; color:#1c2733; line-height:1.6; background:#fff; }
+  .hero { background:var(--navy); color:#fff; padding:44px 20px 36px; text-align:center; }
+  .hero h1 { font-size:1.6em; margin:0 0 8px; }
+  .hero p { color:#aeb8c8; max-width:560px; margin:0 auto; font-size:1em; }
+  main { max-width:640px; margin:0 auto; padding:28px 20px 20px; }
+  .calc { background:#f4f6f9; border:1px solid #e2e7ee; border-radius:14px; padding:20px; }
+  .q { margin:0 0 14px; }
+  .q .lbl { font-weight:600; font-size:.95em; display:block; margin-bottom:6px; }
+  .q .lbl span { font-weight:400; color:#6b7280; font-size:.85em; margin-left:6px; }
+  .seg { display:flex; border:1px solid #c7cfda; border-radius:10px; overflow:hidden; background:#fff; }
+  .seg button { flex:1 1 0; border:0; border-left:1px solid #e2e7ee; background:#fff; padding:9px 4px;
+                font-size:.92em; cursor:pointer; font-family:inherit; color:#1c2733; }
+  .seg button:first-child { border-left:0; }
+  .seg button.on { background:var(--teal); color:#fff; font-weight:600; }
+  .result { margin-top:6px; border-radius:12px; padding:16px 18px; color:#fff; text-align:center;
+            background:linear-gradient(135deg, var(--teal), var(--edd)); }
+  .result .total { font-size:2.6em; font-weight:800; line-height:1.1; }
+  .result .interp { font-weight:600; font-size:1.05em; }
+  .result .bd { font-size:.85em; opacity:.85; margin-top:4px; }
+  table { border-collapse:collapse; width:100%; margin:18px 0; font-size:.9em; }
+  th, td { border:1px solid #e2e7ee; padding:7px 8px; text-align:left; }
+  th { background:#f4f6f9; }
+  h2 { font-size:1.15em; margin-top:2em; }
+  .cta { background:var(--navy); color:#fff; border-radius:14px; padding:20px; margin:26px 0; text-align:center; }
+  .cta p { color:#aeb8c8; margin:6px 0 14px; font-size:.95em; }
+  .store-btn { display:inline-block; background:#fff; color:var(--navy); font-weight:600;
+               padding:11px 22px; border-radius:11px; text-decoration:none; }
+  .faq h3 { font-size:1em; margin:1.2em 0 .2em; }
+  .faq p { margin:.2em 0; color:#4b5563; font-size:.95em; }
+  .fine { font-size:.85em; color:#6b7280; }
+  a { color:var(--teal); }
+  .qa { background:#eef6f9; border-left:4px solid var(--teal); border-radius:10px;
+        padding:12px 16px; margin:0 0 20px; font-size:.97em; }
+  .qa b.lbl { display:block; font-size:.75em; text-transform:uppercase; letter-spacing:.06em;
+        color:var(--teal); margin-bottom:2px; }
+  .qa p { margin:0; }
+  .method p, .method li { font-size:.9em; color:#4b5563; }
+  .method ul { padding-left:1.2em; margin:.4em 0; }
+  .reviewed { font-size:.85em; color:#6b7280; margin-top:.8em; }
+  footer { margin:3em 0 2em; font-size:.85em; color:#6b7280; text-align:center; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Bishop Score Calculator</h1>
+  <p>Score the cervix before labor induction: dilation, effacement, station, consistency and
+  position. Tap one option per row — the total and interpretation update instantly.</p>
+</div>
+
+<main>
+  <div class="qa"><b class="lbl">Quick answer</b><p>Bishop score = dilation (0–3) + effacement (0–3) + station (0–3) + consistency (0–2) + position (0–2), for a total of <strong>0 to 13</strong>. Per ACOG Practice Bulletin 107, a score of <strong>6 or less</strong> has generally defined an unfavorable cervix, and with a score <strong>above 8</strong> the probability of vaginal delivery after induction is similar to that after spontaneous labor.</p></div>
+
+  <div class="calc">
+    <div class="q"><span class="lbl">Dilation<span>cm</span></span>
+      <div class="seg" data-k="dil" role="group" aria-label="Dilation">
+        <button type="button" data-v="0" class="on">Closed</button><button type="button" data-v="1">1–2</button><button type="button" data-v="2">3–4</button><button type="button" data-v="3">&ge;5</button>
+      </div></div>
+    <div class="q"><span class="lbl">Effacement<span>%</span></span>
+      <div class="seg" data-k="eff" role="group" aria-label="Effacement">
+        <button type="button" data-v="0" class="on">0–30</button><button type="button" data-v="1">40–50</button><button type="button" data-v="2">60–70</button><button type="button" data-v="3">&ge;80</button>
+      </div></div>
+    <div class="q"><span class="lbl">Fetal station<span>&minus;3 to +3 scale</span></span>
+      <div class="seg" data-k="sta" role="group" aria-label="Station">
+        <button type="button" data-v="0" class="on">&minus;3</button><button type="button" data-v="1">&minus;2</button><button type="button" data-v="2">&minus;1 / 0</button><button type="button" data-v="3">+1 / +2</button>
+      </div></div>
+    <div class="q"><span class="lbl">Cervical consistency</span>
+      <div class="seg" data-k="con" role="group" aria-label="Consistency">
+        <button type="button" data-v="0" class="on">Firm</button><button type="button" data-v="1">Medium</button><button type="button" data-v="2">Soft</button>
+      </div></div>
+    <div class="q"><span class="lbl">Cervical position</span>
+      <div class="seg" data-k="pos" role="group" aria-label="Position">
+        <button type="button" data-v="0" class="on">Posterior</button><button type="button" data-v="1">Mid</button><button type="button" data-v="2">Anterior</button>
+      </div></div>
+    <div class="result" role="status">
+      <div class="total" id="oTotal">0</div>
+      <div class="interp" id="oInterp">—</div>
+      <div class="bd" id="oBd">0+0+0+0+0 · consult your induction protocol</div>
+    </div>
+  </div>
+
+  <h2>The Bishop score table</h2>
+  <table>
+    <tr><th>Factor</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+    <tr><td>Dilation (cm)</td><td>Closed</td><td>1–2</td><td>3–4</td><td>&ge;5</td></tr>
+    <tr><td>Effacement (%)</td><td>0–30</td><td>40–50</td><td>60–70</td><td>&ge;80</td></tr>
+    <tr><td>Station (&minus;3 to +3)</td><td>&minus;3</td><td>&minus;2</td><td>&minus;1, 0</td><td>+1, +2</td></tr>
+    <tr><td>Consistency</td><td>Firm</td><td>Medium</td><td>Soft</td><td>—</td></tr>
+    <tr><td>Position</td><td>Posterior</td><td>Mid-position</td><td>Anterior</td><td>—</td></tr>
+  </table>
+  <table>
+    <tr><th>Total score</th><th>Interpretation on this page</th></tr>
+    <tr><td>0–6</td><td>Unfavorable cervix — the definition used in most randomized trials (ACOG PB 107)</td></tr>
+    <tr><td>7–8</td><td>Intermediate</td></tr>
+    <tr><td>9–13 (&gt;8)</td><td>Favorable — probability of vaginal delivery after induction similar to spontaneous labor (ACOG PB 107)</td></tr>
+  </table>
+  <p class="fine">Cut-offs differ between sources and unit protocols, for example by parity. Use the score
+  together with your local induction protocol.</p>
+
+  <div class="cta">
+    <b>Partus: Pregnancy Wheel — the Bishop score next to every pregnancy date.</b>
+    <p>OB wheel for clinicians with the Bishop score, ACOG ultrasound redating and IVF transfer
+    dating. No account, no patient data stored, works offline.</p>
+    <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-bishop&amp;mt=8">Get Partus on the App&nbsp;Store</a>
+  </div>
+
+  <div class="faq">
+    <h2>Common questions</h2>
+    <h3>What is the Bishop score?</h3>
+    <p>A pre-induction assessment of the cervix described by Edward Bishop in 1964. Five findings from a
+    vaginal exam — dilation, effacement, fetal station, consistency and position — are each given 0–3 or
+    0–2 points, for a total of 0 to 13. Higher scores mean a more favorable (riper) cervix.</p>
+    <h3>What Bishop score is favorable for induction?</h3>
+    <p>ACOG Practice Bulletin 107 states that with a total score above 8, the probability of vaginal
+    delivery after induction is similar to that after spontaneous labor, and that an unfavorable cervix has
+    generally been defined as a score of 6 or less in most randomized trials. Exact cut-offs vary between
+    protocols.</p>
+    <h3>What does an unfavorable cervix change?</h3>
+    <p>With an unfavorable cervix, induction protocols typically start with cervical ripening (mechanical
+    or pharmacologic methods) before oxytocin. The choice of method follows the local protocol and the
+    clinical situation.</p>
+    <h3>How is fetal station scored?</h3>
+    <p>On the −3 to +3 scale relative to the ischial spines: −3 scores 0, −2 scores 1, −1 or 0 scores 2,
+    and +1 or +2 scores 3.</p>
+    <h3>What is the modified Bishop score?</h3>
+    <p>Some modified versions replace effacement with cervical length measured in centimeters. This
+    calculator uses the original five-component Bishop score.</p>
+  </div>
+
+  <div class="method">
+  <h2>Methodology &amp; sources</h2>
+  <ul>
+    <li>Total = dilation + effacement + station + consistency + position, using the point values in the table above (range 0–13).</li>
+    <li>Interpretation bands on this page follow the wording of ACOG Practice Bulletin 107: &le;6 unfavorable, &gt;8 favorable, 7–8 shown as intermediate.</li>
+    <li>The score summarizes an exam; it does not replace clinical judgment or the unit's induction protocol.</li>
+  </ul>
+  <p>Sources: Bishop EH. Pelvic scoring for elective induction. <em>Obstetrics &amp; Gynecology</em>. 1964;24:266–268.
+  Induction of Labor. <em>ACOG Practice Bulletin No.&nbsp;107</em>, August 2009.
+  All arithmetic runs in your browser; nothing you enter is sent anywhere. This page is a reference tool
+  for healthcare professionals. It does not provide medical advice or diagnosis.</p>
+  <p class="reviewed">Last reviewed: <time datetime="2026-10-01">October 1, 2026</time> &middot; Published by 55DIGITS LLC &middot;
+  Corrections: <a href="mailto:ep@tommano.com">ep@tommano.com</a></p>
+  </div>
+</main>
+
+<footer>&copy; 2026 55DIGITS LLC &middot; <a href="/">partuswheel.app</a> &middot;
+<a href="/ob-wheel.html">Pregnancy Wheel Calculator</a> &middot;
+<a href="/redating-calculator.html">ACOG Redating Calculator</a> &middot;
+<a href="/ivf-due-date-calculator.html">IVF &amp; FET Due Date Calculator</a> &middot;
+<a href="https://apps.apple.com/app/apple-store/id6796027980?pt=129160451&amp;ct=web-bishop&amp;mt=8">Partus on the App Store</a></footer>
+
+<script>
+(function () {
+  var state = { dil:0, eff:0, sta:0, con:0, pos:0 };
+  var order = ['dil','eff','sta','con','pos'];
+  var oTotal = document.getElementById('oTotal'), oInterp = document.getElementById('oInterp'),
+      oBd = document.getElementById('oBd');
+  function calc() {
+    var parts = order.map(function (k) { return state[k]; });
+    var total = parts.reduce(function (a, b) { return a + b; }, 0);
+    oTotal.textContent = total;
+    oInterp.textContent = total <= 6 ? 'Unfavorable cervix (≤ 6)'
+                        : total <= 8 ? 'Intermediate (7–8)'
+                        : 'Favorable (> 8)';
+    oBd.textContent = parts.join('+') + ' · consult your induction protocol';
+  }
+  document.querySelectorAll('.seg').forEach(function (seg) {
+    var btns = seg.querySelectorAll('button');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.classList.remove('on'); });
+        b.classList.add('on');
+        state[seg.dataset.k] = +b.dataset.v;
+        calc();
+      });
+    });
+  });
+  calc();
+})();
+</script>
+
+</body>
+</html>
