@@ -18,6 +18,15 @@ Key facts:
 - [IVF & FET Due Date Calculator](https://partuswheel.app/ivf-due-date-calculator.html): due date, equivalent LMP and gestational age from a day-3, day-5 or day-6 embryo transfer date, fresh or frozen.
 - [Bishop Score Calculator](https://partuswheel.app/bishop-score-calculator.html): Bishop score (0–13) from dilation, effacement, station, consistency and position, interpreted with the common convention used in NICE NG207 (≤6 unfavorable, 7 intermediate, ≥8 favorable); ACOG's 2025 guideline notes there is no universally accepted cut-off.
 
+## Articles
+
+- [Bishop Score Interpretation: What a Score of 2, 4, 6 or 8 Means](https://partuswheel.app/blog/bishop-score-interpretation.html): What scores of 2, 4, 6 and 8 mean, the cut-offs NICE and ACOG use, and when ripening comes before oxytocin.
+- [Modified vs Simplified Bishop Score: What's the Difference?](https://partuswheel.app/blog/modified-vs-simplified-bishop-score.html): Original vs modified (Calder) vs simplified (Laughon) — components, ranges and cut-offs side by side.
+- [Naegele's Rule: Formula, Worked Examples and Practice Questions](https://partuswheel.app/blog/naegeles-rule.html): The formula, worked examples, why it can differ from a 280-day calculator, and practice questions with answers.
+- [LMP vs Ultrasound Due Date: When Should the EDD Be Changed?](https://partuswheel.app/blog/lmp-vs-ultrasound-due-date.html): ACOG CO 700 thresholds, accuracy by trimester, a 2-week difference explained, and third-trimester scans.
+- [How to Calculate a Due Date After IVF: Day 3, Day 5, Day 6 and FET](https://partuswheel.app/blog/ivf-due-date-calculation.html): Transfer date + (266 − embryo age), with worked examples for day-3, day-5, day-6 and frozen transfers.
+- [How to Use a Pregnancy Wheel (OB Wheel), Step by Step](https://partuswheel.app/blog/how-to-use-a-pregnancy-wheel.html): Reading the EDD and gestational age from LMP, EDD or ultrasound — and how accurate paper wheels really are.
+
 ## App
 
 - [Partus on the App Store](https://apps.apple.com/us/app/partus-pregnancy-wheel/id6796027980): iOS app, App Store id 6796027980.
