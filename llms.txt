@@ -8,7 +8,7 @@ Key facts:
 - ACOG CO 700 redating: redate to ultrasound when the LMP–ultrasound difference is more than 5 days before 9w0d, more than 7 days at 9w0d–15w6d, more than 10 days at 16w0d–21w6d, more than 14 days at 22w0d–27w6d, and more than 21 days from 28w0d. The window is chosen by the ultrasound gestational age.
 - IVF due date: transfer date + 263 days (day-3 embryo), + 261 days (day-5 blastocyst), + 260 days (day-6 blastocyst); equivalent LMP = EDD − 280 days. Works for fresh and frozen transfers.
 - Bishop score: dilation (0–3) + effacement (0–3) + station (0–3) + consistency (0–2) + position (0–2) = 0–13.
-- Price: free download; one-time unlock, no subscription.
+- Price: free download; Partus Pro is a one-time $4.99 unlock (US App Store) for ACOG redating, IVF dating and the Bishop score; no subscription.
 - Privacy: App Store privacy label "Data Not Collected"; all calculations on device.
 
 ## Free web calculators
