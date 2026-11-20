@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bishop Score Calculator — Cervical Favorability for Labor Induction</title>
-<meta name="description" content="Free Bishop score calculator: score dilation, effacement, station, consistency and position (0–13) and see whether the cervix is favorable for labor induction, using the common ≤6 / ≥8 convention (NICE NG207).">
+<title>Bishop Score Calculator — Free 0–13 Score for Labor Induction</title>
+<meta name="description" content="Bishop score calculator: add dilation, effacement, station, consistency and position for a 0–13 score. 8 or more usually means a favorable cervix, 6 or less an unfavorable one (NICE NG207). Free, no sign-up.">
 <link rel="canonical" href="https://partuswheel.app/bishop-score-calculator.html">
 <link rel="icon" type="image/png" href="/icon.png">
 <meta name="apple-itunes-app" content="app-id=6796027980">
@@ -25,7 +25,7 @@
   "url": "https://partuswheel.app/bishop-score-calculator.html",
   "description": "Calculates the Bishop score (0–13) from cervical dilation, effacement, fetal station, cervical consistency and position, and interprets cervical favorability for labor induction.",
   "author": { "@type": "Organization", "name": "55DIGITS LLC", "url": "https://partuswheel.app/" },
-  "dateModified": "2026-10-04"
+  "dateModified": "2026-11-20"
 }
 </script>
 <script type="application/ld+json">
@@ -39,6 +39,22 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "A pre-induction assessment of the cervix described by Edward Bishop in 1964. Five findings from a vaginal exam — dilation, effacement, fetal station, consistency and position — are each given 0–3 or 0–2 points, for a total of 0 to 13. Higher scores mean a more favorable (riper) cervix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate the Bishop score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Score each of the five findings from the chart and add them: dilation 0–3, effacement 0–3, station 0–3, consistency 0–2 and position 0–2. Example: 2 cm, 50%, station −2, medium, mid-position = 1+1+1+1+1 = 5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a Bishop score of 4, 6 or 8 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the common convention used in NICE NG207, 4 and 6 are unfavorable, and cervical ripening is usually considered before oxytocin; 8 is favorable. ACOG (2025) notes that thresholds from 3 to 8 have been used, so the local induction protocol decides."
       }
     },
     {
@@ -135,8 +151,9 @@
 
 <div class="hero">
   <h1>Bishop Score Calculator</h1>
-  <p>Score the cervix before labor induction: dilation, effacement, station, consistency and
-  position. Tap one option per row — the total and interpretation update instantly.</p>
+  <p>The Bishop score rates the cervix before labor induction: dilation, effacement, station, consistency
+  and position add up to 0–13 points. 8 or more usually means a favorable cervix, 6 or less an unfavorable one.
+  Tap one option per row — the total updates instantly.</p>
 </div>
 
 <main>
@@ -170,7 +187,7 @@
     </div>
   </div>
 
-  <h2>The Bishop score table</h2>
+  <h2>Bishop score chart</h2>
   <table>
     <tr><th>Factor</th><th>0</th><th>1</th><th>2</th><th>3</th></tr>
     <tr><td>Dilation (cm)</td><td>Closed</td><td>1–2</td><td>3–4</td><td>&ge;5</td></tr>
@@ -189,6 +206,13 @@
   definition of an unfavorable cervix, that thresholds from 3 to 8 have been used, and that parity and gestational
   age also affect the course of induction. Use the score together with your local induction protocol.</p>
 
+  <h2>How to calculate the Bishop score: an example</h2>
+  <p>Score each finding from the chart and add the five numbers. A cervix that is 2&nbsp;cm dilated (1 point),
+  50% effaced (1), at station &minus;2 (1), medium (1) and mid-position (1) scores <strong>5</strong> — unfavorable
+  under the &le;6 convention. The same cervix at 4&nbsp;cm (2), 80% (3), station 0 (2), soft (2) and anterior (2)
+  scores <strong>11</strong> — favorable. What each total means in practice:
+  <a href="/blog/bishop-score-interpretation.html">Bishop score interpretation</a>.</p>
+
   <div class="cta">
     <b>Partus: Pregnancy Wheel — the Bishop score next to every pregnancy date.</b>
     <p>OB wheel for clinicians with the Bishop score, ACOG ultrasound redating and IVF transfer
@@ -202,6 +226,15 @@
     <p>A pre-induction assessment of the cervix described by Edward Bishop in 1964. Five findings from a
     vaginal exam — dilation, effacement, fetal station, consistency and position — are each given 0–3 or
     0–2 points, for a total of 0 to 13. Higher scores mean a more favorable (riper) cervix.</p>
+    <h3>How do you calculate the Bishop score?</h3>
+    <p>Score each of the five findings from the chart and add them: dilation 0–3, effacement 0–3, station 0–3,
+    consistency 0–2 and position 0–2. Example: 2&nbsp;cm, 50%, station &minus;2, medium, mid-position =
+    1+1+1+1+1 = 5.</p>
+    <h3>What does a Bishop score of 4, 6 or 8 mean?</h3>
+    <p>Under the common convention used in NICE NG207, 4 and 6 are unfavorable, and cervical ripening is usually
+    considered before oxytocin; 8 is favorable. ACOG (2025) notes that thresholds from 3 to 8 have been used, so
+    the local induction protocol decides. More in <a href="/blog/bishop-score-interpretation.html">Bishop score
+    interpretation: what a score of 2, 4, 6 or 8 means</a>.</p>
     <h3>What Bishop score is favorable for induction?</h3>
     <p>The most common convention is 8 or more for a favorable (ready) cervix and 6 or less for an
     unfavorable one. NICE guideline NG207 uses exactly these cut-offs: with a score of 6 or less it recommends
@@ -220,7 +253,8 @@
     above 8.</p>
     <h3>What is the modified Bishop score?</h3>
     <p>Some modified versions replace effacement with cervical length measured in centimeters. This
-    calculator uses the original five-component Bishop score.</p>
+    calculator uses the original five-component Bishop score. The versions are compared side by side in
+    <a href="/blog/modified-vs-simplified-bishop-score.html">Modified vs simplified Bishop score</a>.</p>
   </div>
 
   <div class="method">
@@ -236,7 +270,7 @@
   Laughon SK et al. Using a simplified Bishop score to predict vaginal delivery. <em>Obstet Gynecol</em> 2011;117:805–811.
   All arithmetic runs in your browser; nothing you enter is sent anywhere. This page is a reference tool
   for healthcare professionals. It does not provide medical advice or diagnosis.</p>
-  <p class="reviewed">Last reviewed: <time datetime="2026-10-04">October 4, 2026</time> &middot; Published by 55DIGITS LLC &middot;
+  <p class="reviewed">Last reviewed: <time datetime="2026-11-20">November 20, 2026</time> &middot; Published by 55DIGITS LLC &middot;
   Corrections: <a href="mailto:ep@tommano.com">ep@tommano.com</a></p>
   </div>
 </main>
